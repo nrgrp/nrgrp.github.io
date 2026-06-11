@@ -6,7 +6,7 @@ RESET := \033[0m
 CONF  := nrweb.conf
 JEMDOC_SRC := $(shell find . -name '*.jemdoc' -type f | sort | sed 's|^\./||')
 PREVIEW_HOST := 127.0.0.1
-PREVIEW_PORT := 8000
+PREVIEW_PORT := 8001
 
 .DEFAULT_GOAL := help
 
