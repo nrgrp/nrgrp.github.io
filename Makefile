@@ -43,7 +43,10 @@ update: ## compile only new or modified jemdoc files
 preview: ## preview the webpage locally
 	$(call ensure,static-web-server,cargo install static-web-server)
 	@printf "$(BLUE)Starting local web server on http://$(PREVIEW_HOST):$(PREVIEW_PORT)...$(RESET)\n"
-	@static-web-server --host $(PREVIEW_HOST) --port $(PREVIEW_PORT) --root . --redirect-trailing-slash true
+	@static-web-server --host $(PREVIEW_HOST) --port $(PREVIEW_PORT) --root . --redirect-trailing-slash true & \
+	pid=$$!; \
+	trap 'printf "\n$(BLUE)Local web server stopped.$(RESET)\n"; kill $$pid 2>/dev/null; wait $$pid 2>/dev/null; exit 130' INT TERM; \
+	wait $$pid
 
 clean: ## clean generated files and directories
 	@printf "$(BLUE)Cleaning project...$(RESET)\n"
