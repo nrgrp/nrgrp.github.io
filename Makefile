@@ -45,7 +45,10 @@ preview: ## preview the webpage locally
 	@printf "$(BLUE)Starting local web server on http://$(PREVIEW_HOST):$(PREVIEW_PORT)...$(RESET)\n"
 	@static-web-server --host $(PREVIEW_HOST) --port $(PREVIEW_PORT) --root . --redirect-trailing-slash true & \
 	pid=$$!; \
-	trap 'printf "\n$(BLUE)Local web server stopped.$(RESET)\n"; kill $$pid 2>/dev/null; wait $$pid 2>/dev/null; exit 130' INT TERM; \
+	stopped=0; \
+	cleanup() { [ "$$stopped" -eq 1 ] && return; stopped=1; printf "\n$(BLUE)Local web server stopped.$(RESET)\n"; kill $$pid 2>/dev/null; wait $$pid 2>/dev/null; }; \
+	trap 'cleanup; trap - INT TERM; kill -INT $$$$' INT; \
+	trap 'cleanup; trap - INT TERM; kill -TERM $$$$' TERM; \
 	wait $$pid
 
 clean: ## clean generated files and directories
