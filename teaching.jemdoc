@@ -2,12 +2,21 @@
 = Neurorobotics Group --- Teaching
 [https://www.informatik.uni-freiburg.de/ Department of Computer Science], [https://uni-freiburg.de/ University of Freiburg]
 
+The following is a list of courses that we are currently teaching (but not necessarily every semester).
+The exact teaching schedule can be found on our [/index.html homepage].
+
+[old_class.html This archive] includes the classes that we used to teach in the past.
+There are good materials in them, but is no longer taught.
+
 == Lectures
 - /1141: Reinforcement Learning/
 - [https://haozhu10015.github.io/teaching/pgm/ /1228: Probabilistic Graphical Models/]
-
-== Seminars
+- /2040: Foundations of Artificial Intelligence/
 
 == Lab courses
+- /7320: Deep Learning Lab --- Neurorobotics/
+- /7344: Soccer Analytics Lab/
 
-== Classes we used to teach
+== Seminars
+- Artificial General Intelligence
+- Multiagent Reinforcement Learning
