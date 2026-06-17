@@ -6,7 +6,7 @@ RESET := \033[0m
 CONF  := nrweb.conf
 JEMDOC_SRC := $(shell find . -name '*.jemdoc' -type f | sort | sed 's|^\./||')
 PREVIEW_HOST := 127.0.0.1
-PREVIEW_PORT := 8000
+PREVIEW_PORT := 8001
 
 .DEFAULT_GOAL := help
 
@@ -43,7 +43,10 @@ update: ## compile only new or modified jemdoc files
 preview: ## preview the webpage locally
 	$(call ensure,static-web-server,cargo install static-web-server)
 	@printf "$(BLUE)Starting local web server on http://$(PREVIEW_HOST):$(PREVIEW_PORT)...$(RESET)\n"
-	@static-web-server --host $(PREVIEW_HOST) --port $(PREVIEW_PORT) --root . --redirect-trailing-slash true
+	@static-web-server --host $(PREVIEW_HOST) --port $(PREVIEW_PORT) --root . --redirect-trailing-slash true & \
+	pid=$$!; \
+	trap 'kill $$pid 2>/dev/null; wait $$pid 2>/dev/null; exit 0' INT TERM; \
+	wait $$pid
 
 clean: ## clean generated files and directories
 	@printf "$(BLUE)Cleaning project...$(RESET)\n"

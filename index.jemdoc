@@ -3,5 +3,31 @@
 [https://www.informatik.uni-freiburg.de/ Department of Computer Science], [https://uni-freiburg.de/ University of Freiburg]
 
 ~~~
-{}{img_left}{img/imbit.jpg}{alt text}{500px}{}{}
+{}{img_left}{img/imbit.jpg}{Neurorobotics Group}{720px}{}{}
 ~~~
+
+=== Welcome to the Neurorobotics Group at the University of Freiburg!
+We are part of the [https://www.informatik.uni-freiburg.de/ Department of Computer Science], as well as the Cluster of Excellence [https://uni-freiburg.de/brainlinks-braintools/ BrainLinks-BrainTools].
+We develop machine learning techniques for robotics and neurotechnology.
+We focus on data-efficient deep reinforcement learning methods that provide robust and adaptive solutions, and target applications on real-world devices.
+
+\[[https://scholar.google.com/citations?user=2mv2dDkAAAAJ&hl=en Google Scholar]\] \M
+\[[https://github.com/nrgrp GitHub]\] \M
+\[[/event.html Events]]
+
+== Teaching schedule
+=== Summer 2026
+- Lectures
+-- Reinforcement Learning
+-- [https://haozhu10015.github.io/teaching/pgm/ Probabilistic Graphical Models]
+-- Foundations of Artificial Intelligence
+- Seminars
+-- Artificial General Intelligence
+-- Multiagent Reinforcement Learning
+- Lab courses
+-- Deep Learning Lab
+-- Soccer Analytics Lab
+
+=== Winter 2026/27
+- Lectures
+-- [https://haozhu10015.github.io/teaching/dml/ Disciplined Machine Learning]
